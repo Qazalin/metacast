@@ -11,11 +11,47 @@ const breakpoints = createBreakpoints({
 })
 
 const theme = extendTheme({
-  colors: {
-    black: '#16161D',
+  styles: {
+    global: {
+      body: {
+        overflowX: 'hidden',
+      },
+    },
   },
   fonts,
   breakpoints,
+  components: {
+    Text: {
+      variants: {
+        heading: {
+          fontSize: ['4rem', '6rem'],
+          fontWeight: 'bold',
+          lineHeight: 'normal',
+        },
+        subheading: {
+          fontSize: ['xl', '2xl'],
+          color: 'gray.400',
+        },
+        title: {
+          fontWeight: 'bold',
+          fontSize: 'xl',
+        },
+        subtitle: {
+          fontWeight: 'light',
+          fontSize: 'lg',
+        },
+      },
+    },
+    Button: {
+      variants: {
+        options: {
+          fontSize: '1.2rem',
+          fontWeight: 'normal',
+          textTransform: 'capitalize',
+        },
+      },
+    },
+  },
 })
 
 export default theme
