@@ -34,11 +34,12 @@ const theme = extendTheme({
         },
         title: {
           fontWeight: 'bold',
-          fontSize: 'xl',
+          fontSize: ['2xl', '4xl'],
         },
         subtitle: {
           fontWeight: 'light',
-          fontSize: 'lg',
+          fontSize: 'sm',
+          color: 'gray.500',
         },
       },
     },

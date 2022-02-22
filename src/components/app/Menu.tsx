@@ -7,13 +7,24 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-import { MenuProps } from '../types'
+import { MenuProps } from '../../types'
 
 export const Menu = ({ menu }: MenuProps) => {
   return (
     <List spacing={2}>
       {menu.map((option) => (
-        <ListItem paddingX="20px" fontSize="16px" key={option.name}>
+        <ListItem
+          p="5px"
+          borderRadius={'5px'}
+          fontSize="16px"
+          key={option.name}
+          sx={{
+            '&:hover': {
+              bg: 'black',
+              color: 'white',
+            },
+          }}
+        >
           <LinkBox>
             <NextLink href={option.route} passHref>
               <LinkOverlay>

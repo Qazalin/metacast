@@ -4,7 +4,7 @@ import {
   Box,
   List,
   ListItem,
-  ListIcon,
+  Text,
   Divider,
   Center,
   LinkBox,
@@ -86,13 +86,19 @@ const Sidebar = () => {
         <Box width="120px" marginBottom="20px" paddingX="20px">
           <NextImage src="/Metacast.png" height={100} width={100} />
         </Box>
-        <Box marginBottom="20px">
+        <Box marginBottom="20px" paddingX="20px">
           <Menu menu={navMenu} />
         </Box>
-        <Box marginTop="20px">
+        <Box marginTop="20px" paddingX="20px">
+          <Text variant="subtitle" mb="10px">
+            Discover
+          </Text>
           <Menu menu={discoverMenu} />
         </Box>
-        <Box my="20px">
+        <Box my="20px" paddingX="20px">
+          <Text variant="subtitle" mb="10px">
+            For You
+          </Text>
           <Menu menu={musicMenu} />
         </Box>
         <Divider color="gray.800" />

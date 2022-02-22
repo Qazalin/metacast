@@ -1,20 +1,28 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-  Box,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+import { Box } from '@chakra-ui/react'
+import { useState } from 'react'
 
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { PlayerLayout } from '../components/layout/PlayerLayout'
+import { PlayerLayout } from '../components/app/layout/PlayerLayout'
+import { Navbar } from '../components/app/Navbar'
+import { Playlist } from '../components/app/Playlist'
+import { Trending } from '../components/app/Trending'
 
-const Index = () => <PlayerLayout />
+const Index = () => {
+  const [scrollValue, setScrollValue] = useState(0)
+  // let scrollValue = 0
+
+  const handleScroll = (e) => {
+    setScrollValue(e.target.scrollTop)
+  }
+
+  return (
+    <PlayerLayout>
+      <Navbar scrollValue={scrollValue} />
+      <Box overflowY="auto" onScroll={handleScroll} px="3rem">
+        <Trending />
+        <Playlist />
+      </Box>
+    </PlayerLayout>
+  )
+}
 
 export default Index
